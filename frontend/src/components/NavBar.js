@@ -3,7 +3,7 @@ const NavBar = () => (
     <header>
         <div className="container">
             <Link>
-                <h1>Totem</h1>
+                <h1>Workout Tracker</h1>
             </Link>
         </div>
     </header>
