@@ -11,7 +11,7 @@ const HomePage = () => {
     useEffect(() => {
         const fetchWorkouts = async () => {
 
-            const res = await fetch("/api/workouts", {
+            const res = await fetch(process.env.REACT_APP_API_URL + "/api/workouts", {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }
