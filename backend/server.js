@@ -10,10 +10,10 @@ const port = process.env.PORT || 4000
 // creates express app
 const app = express()
 app.use(cors({
-    origin: "https://workout-tracker-frontend-nwu2.onrender.com", // Base URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-    credentials: true, // Include credentials (cookies, etc.)
-    allowedHeaders: ["Content-Type"], // Specify allowed headers
+    origin: "*", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, 
+    allowedHeaders: ["Content-Type"], 
 }));
 
 // middle ware
