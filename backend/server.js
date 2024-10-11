@@ -9,7 +9,11 @@ const port = process.env.PORT || 4000
 
 // creates express app
 const app = express()
-app.use(cors());
+app.use(cors({
+    origin: "http://workout-tracker-frontend-nwu2.onrender.com/login",
+    headers: ["Content-Type"],
+    credentials: true,
+}));
 
 // middle ware
 app.use(express.json())
