@@ -9,12 +9,7 @@ const port = process.env.PORT || 4000
 
 // creates express app
 const app = express()
-app.use(cors({
-    origin: "*", 
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, 
-    allowedHeaders: ["Content-Type"], 
-}));
+app.use(cors());
 
 // middle ware
 app.use(express.json())
