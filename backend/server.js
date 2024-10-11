@@ -9,11 +9,14 @@ const port = process.env.PORT || 4000
 
 // creates express app
 const app = express()
-app.options('*', cors());
+// app.options('*', cors());
 
 // middle ware
 app.use(express.json())
 app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');  // Allows all origins
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     console.log(req.path, req.method)
     next()
 })
