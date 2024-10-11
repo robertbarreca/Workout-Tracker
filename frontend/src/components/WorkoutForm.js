@@ -19,7 +19,7 @@ const WorkoutForm = () => {
         }
 
         const workout = { title, load, reps }
-        const res = await fetch("/api/workouts", {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}api/workouts`, {
             method: "POST",
             body: JSON.stringify(workout),
             headers: {
@@ -37,7 +37,6 @@ const WorkoutForm = () => {
             setLoad("")
             setReps("")
             setError(null)
-            console.log(json)
             dispatch({ type: "CREATE_WORKOUT", payload: json })
             setEmptyFields([])
         }
