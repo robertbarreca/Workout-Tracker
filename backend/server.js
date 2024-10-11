@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 const express = require("express")
 const mongoose = require("mongoose")
 const workoutRoutes = require("./routes/workouts")
@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use(process.env.REACT_APP_API_URL + "/api/workouts", workoutRoutes)
-app.use(process.env.REACT_APP_API_URL + "/api/user", userRoutes)
+app.use("/api/workouts", workoutRoutes)
+app.use("/api/user", userRoutes)
 
 // connect to DB
 mongoose.connect(process.env.MONGO_URI)
