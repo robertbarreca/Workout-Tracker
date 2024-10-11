@@ -15,7 +15,7 @@ export const useLogin = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({email, password})
         })
-        
+        console.log(res)
         const json = await res.json()
         if (!res.ok) {
             setIsLoading(false)
