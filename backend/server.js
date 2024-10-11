@@ -3,11 +3,19 @@ const express = require("express")
 const mongoose = require("mongoose")
 const workoutRoutes = require("./routes/workouts")
 const userRoutes = require("./routes/users")
+const cors = require("cors")
 
 const port = process.env.PORT || 4000
 
 // creates express app
 const app = express()
+
+const corsOptions = {
+  origin: 'https://workout-tracker-frontend-nwu2.onrender.com/login', 
+  optionsSuccessStatus: 200, 
+};
+
+app.use(cors(corsOptions));
 
 // middle ware
 app.use(express.json())
