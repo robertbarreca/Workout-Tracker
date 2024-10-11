@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000
 const app = express()
 
 const corsOptions = {
-  origin: 'https://workout-tracker-backend-nwu2.onrender.com/login', 
+  origin: 'https://workout-tracker-frontend-nwu2.onrender.com/login', 
   optionsSuccessStatus: 200, 
 };
 
