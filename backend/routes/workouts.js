@@ -1,3 +1,17 @@
+/**
+ * @fileoverview Workout Routes
+ *
+ * @description This module defines the routes for workout-related operations. 
+ * It requires authentication for all routes and handles the following operations:
+ * - Getting all workouts
+ * - Getting a single workout by ID
+ * - Creating a new workout
+ * - Updating an existing workout by ID
+ * - Deleting a workout by ID
+ *
+ * @dependencies express, ../middleware/requireAuth, ../controllers/workoutController
+ */
+
 const express = require("express")
 const router = express.Router()
 const requireAuth = require("../middleware/requireAuth")

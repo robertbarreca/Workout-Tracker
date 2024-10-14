@@ -1,3 +1,12 @@
+/**
+ * @fileoverview Server for whole backend
+ * 
+ * @description This file creates and connects the backend to the mongodb database and defines the API routes for performing CRUD operations.
+ * 
+ * @dependencies dotenv, express, cors, ./routes/workouts, ./routes/users
+ */
+
+
 require('dotenv').config()
 const express = require("express")
 const mongoose = require("mongoose")
@@ -9,6 +18,7 @@ const port = process.env.PORT || 4000
 
 // creates express app
 const app = express()
+// define who can make api requests
 app.use(cors({
     origin: 'https://workout-tracker-frontend-nwu2.onrender.com',
     allowedHeaders: ['Content-Type', 'Authorization'],

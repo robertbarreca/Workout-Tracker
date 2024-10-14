@@ -1,7 +1,21 @@
+/**
+ * @fileoverview Workout Form Component
+ * 
+ * @description This component renders a form that allows an authenticated user to create a new workout document in the MongoDB database. 
+ * 
+ * @dependencies ../hooks/useWorkoutsContext, ../hooks/useAuthContext
+ */
+
 import { useState } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
+/**
+ * @function WorkoutForm
+ * @description Renders a form that allows users to create and submit new workouts. If the user is authenticated and the input is valid, a new workout is added to the database.
+ * 
+ * @returns {JSX.Element} The form component for creating a new workout.
+ */
 const WorkoutForm = () => {
     const {dispatch} = useWorkoutsContext()
     const [title, setTitle] = useState("")
@@ -11,6 +25,14 @@ const WorkoutForm = () => {
     const [emptyFields, setEmptyFields] = useState([])
     const {user} = useAuthContext()
 
+    /**
+     * @function handleSubmit
+     * @description Handles the form submission to create a new workout. Sends a POST request to the server. If the request is successful, it dispatches an action to update the global workouts state. If not, sets an error state.
+     * 
+     * @param {Event} The form submission event object.
+     * 
+     * @returns {Promise<void>} Resolves when the form submission is handled. No return value.
+     */
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (!user) {

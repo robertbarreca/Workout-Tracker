@@ -1,3 +1,12 @@
+/**
+ * @fileoverview Schema for a workout document
+ * 
+ * @description This files defines the schema for a workout document.
+ * 
+ * @dependencies mongoose
+ */
+
+
 const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
